@@ -1,0 +1,9 @@
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\bin\Debug\Module9Project.exe.config
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\bin\Debug\Module9Project.exe
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\bin\Debug\Module9Project.pdb
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.csprojAssemblyReference.cache
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.fmrIgPayAtinLay.resources
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.Properties.Resources.resources
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.csproj.GenerateResource.cache
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.exe
+C:\Users\Kevin Tran\source\repos\Module9Solution\Module9Project\obj\Debug\Module9Project.pdb
