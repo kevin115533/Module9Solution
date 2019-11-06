@@ -32,19 +32,58 @@ namespace Module9Project
             {
                 if (validateData())
                 {
-                    if (isNumeric(userMessage))
+                    if (isNonText(userMessage))
                     {
-                        lblTranslatedMessage.Text = "Entry was all numberic and can not be translated";
+                        lblTranslatedMessage.Text = userMessage + "\nEntry is non text and cant be translated";
                     }
                     else
                     {
-                        lblTranslatedMessage.Text = userMessage;
+                        lblTranslatedMessage.Text = translate(userMessage);
                     }
                 }
             }
             catch(Exception ex)
             {
                 lblTranslatedMessage.Text = ex.Message + ex.GetType().ToString();
+            }
+        }
+
+        private string translate(string userString)
+        {
+            string[] words = userString.Split(' ');
+            string translatedString = "";
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (isVowel(words[i].Substring(0, 1))) {
+                    words[i] = words[i] + "way";
+                }
+                else 
+                {
+                    words[i] = words[i].Substring(1, words[i].Length - 1) + words[i].Substring(0, 1) + "ay";
+                }
+            }
+
+            translatedString = string.Join(" ", words);
+            return translatedString;
+        }
+
+        private bool isVowel(string firstLetter)
+        {
+            switch (firstLetter)
+            {
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                case "A":
+                case "E":
+                case "I":
+                case "O":
+                case "U":
+                    return true;
+                default:
+                    return false;
             }
         }
 
@@ -80,7 +119,7 @@ namespace Module9Project
             }
         }
 
-        private bool isNumeric (string userString)
+        private bool isNonText (string userString)
         {
             int n = 0;
             if (int.TryParse(userString, out n))
