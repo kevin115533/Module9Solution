@@ -32,14 +32,20 @@ namespace Module9Project
             {
                 if (validateData())
                 {
-                    lblTranslatedMessage.Text = userMessage;
+                    if (isNumeric(userMessage))
+                    {
+                        lblTranslatedMessage.Text = "Entry was all numberic and can not be translated";
+                    }
+                    else
+                    {
+                        lblTranslatedMessage.Text = userMessage;
+                    }
                 }
             }
             catch(Exception ex)
             {
                 lblTranslatedMessage.Text = ex.Message + ex.GetType().ToString();
             }
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -58,11 +64,10 @@ namespace Module9Project
         public bool validateData()
         {
             return
-                isBlank(txtMessage) &&
-                isText(txtMessage);
+                isBlank(txtMessage);
         }
 
-        private bool isText(TextBox txtMessage)
+        private bool isBlank(TextBox txtMessage)
         {
             if (txtMessage.Text == "")
             {
@@ -75,9 +80,18 @@ namespace Module9Project
             }
         }
 
-        private bool isBlank(TextBox txtMessage)
+        private bool isNumeric (string userString)
         {
-            throw new NotImplementedException();
+            int n = 0;
+            if (int.TryParse(userString, out n))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
